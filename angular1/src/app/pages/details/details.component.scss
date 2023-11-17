@@ -1,0 +1,38 @@
+.product{
+    background-color: rgb(48, 47, 47);
+margin-top: 10px;
+}
+
+.pr-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+img{
+    height: 250px;
+    width: 350px;
+}
+
+
+.btn {
+    border: 5px solid;
+    border-image-slice: 1;
+    background: white !important;
+    
+   
+    border-image-source:  var(--gradient) !important; 
+    text-decoration: none;
+    transition: all .4s ease;
+  }
+  
+  .btn:hover, .btn:focus {
+        background: var(--gradient) !important;
+    font-weight: 700;
+    -webkit-text-fill-color: #fff !important;
+    border: 5px solid #fff !important; 
+    box-shadow: #222 1px 0 10px;
+    text-decoration: none;
+  }

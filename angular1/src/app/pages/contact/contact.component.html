@@ -1,0 +1,303 @@
+<section class="vh-50 "   >
+    <div class="container h-100">
+      <h1>Ana1</h1>
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold  mx-1 mx-md-4 mt-4">Sign up</p>
+  
+                  <form [formGroup]="signUpForm"  class="mx-1 mx-md-4"(ngSubmit)="onSubmit()"  #contactForm="ngForm">
+  
+                    <div class="d-flex flex-row align-items-center mb-3">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" required="" name="firstname" class="form-control" formControlName="firstname">
+                        <label class="form-label" for="form3Example1c">First name</label>
+                        
+                      </div><div *ngIf="signUpForm.controls.firstname.invalid && (signUpForm.controls.firstname.dirty || signUpForm.controls.firstname.touched)" class="alert">
+
+                          <div *ngIf="signUpForm.controls.firstname.errors?.['required']">
+                              Name is required.
+                          </div>
+              
+                          <div *ngIf="signUpForm.controls.firstname.errors?.['maxlength']">
+                              Name must be Maximum 20 characters long.
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example2c" required="" name="lastname" class="form-control" formControlName="lastname">
+                        <label class="form-label" for="form3Example2c">Last name</label>
+                        
+                      </div><div *ngIf="signUpForm.controls.lastname.invalid && (signUpForm.controls.lastname.dirty || signUpForm.controls.lastname.touched)" class="alert">
+
+                          <div *ngIf="signUpForm.controls.lastname.errors?.['required']">
+                              Last name is required.
+                          </div>
+              
+                          <div *ngIf="signUpForm.controls.lastname.errors?.['maxlength']">
+                              Last name must be Maximum 20 characters long.
+                          </div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="email" id="form3Example3c"  name="email" class="form-control" formControlName="email" />
+                        <label class="form-label" for="form3Example3c">Email</label>
+                        
+                      </div><div *ngIf="signUpForm.controls.email.invalid && (signUpForm.controls.email.dirty || signUpForm.controls.email.touched)" class="alert">
+
+                          <div *ngIf="signUpForm.controls.email.errors?.['required']">
+                              Email is required.
+                          </div>
+              
+                          <div *ngIf="signUpForm.controls.email.errors?.['minlength']">
+                            Email must be at least 4 characters long.
+                          </div>
+                      </div>
+                    </div>
+
+
+                    <div   formGroupName="passwords">
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="form3Example4c"  required=""   name="password" class="form-control" formControlName="password" />
+                        <label class="form-label" for="form3Example4c">Password</label>
+                       
+                        
+                      </div> <div *ngIf="passwords['password'].invalid && (passwords['password'].dirty || passwords['password'].touched)"   
+                              class="alert">
+
+                          <div *ngIf="passwords['password'].errors?.['required']">
+                              Password is required.
+                          </div> 
+                          <div *ngIf="passwords['password'].errors?.['pattern']">
+                            Password must contain at least one number, one uppercase and a lowercase letter 
+                             and at least 8 characters
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="form3Example5c" required=""  name="confirmPassword" class="form-control" formControlName="confirmPassword" />
+                        <label class="form-label" for="form3Example5c">Confirm password</label>
+                       
+                      </div> <div *ngIf="passwords['confirmPassword'].invalid && (passwords['confirmPassword'].dirty || passwords['confirmPassword'].touched)" 
+                             class="alert">
+                          <div *ngIf="passwords['confirmPassword'].errors?.['required']">
+                              Confirm password.
+                          </div>
+                          <div *ngIf="passwords['confirmPassword'].errors?.['mustMatch']">
+                            Passwords not matching
+                          </div>
+                      </div>
+                    </div></div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="date" id="form3Example6c" required="" name="date" class="form-control" formControlName="dateOfBirth" />
+                        <label class="form-label" for="form3Example6c">Date of Birth</label>
+                       
+                        
+                      </div> <div *ngIf="signUpForm.controls.dateOfBirth.invalid && (signUpForm.controls.dateOfBirth.dirty || signUpForm.controls.dateOfBirth.touched)" class="alert">
+                          <div *ngIf="signUpForm.controls.dateOfBirth.errors?.['required']">
+                              Choose the date.
+                          </div>
+                      </div>
+                    </div>
+                  <div formGroupName="address">
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example7c" required="" name="address" class="form-control" formControlName="street" />
+                        <label class="form-label" for="form3Example7c">Street</label>
+                       
+                      </div> <div *ngIf="address['street'].invalid && (address['street'].dirty || address['street'].touched)" class="alert">
+
+                          <div *ngIf="address['street'].errors?.['required']" >
+                              Choose your address.
+                          </div>
+                
+                      </div>
+                    </div>
+                  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example8c" required="" name="zipCode" class="form-control" formControlName="zipCode" />
+                        <label class="form-label" for="form3Example8c">Zip Code</label>
+                       
+                      </div> <div *ngIf="address['zipCode'].invalid && (address['zipCode'].dirty || address['zipCode'].touched)" class="alert">
+
+                          <div *ngIf="address['zipCode'].errors?.['required']" >
+                              ZipCode is required.
+                          </div>
+                
+                      </div>
+                    </div>
+
+
+                
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <select id="form3Example9c" required="" name="city" class="form-select" formControlName="city"  >
+                          <option>Tbilisi</option>
+                          <option>Kutaisi</option>
+                          <option>Batumi</option>
+                          <option>Zestaponi</option>
+                        </select>
+                        <label class="form-label" for="form3Example9c">City</label>
+                      </div> 
+                      <div  *ngIf="address['city'].invalid && (address['city'].dirty || address['city'].touched)" class="alert">
+                        <div *ngIf="address['city'].errors?.['required']" >
+                          Choose city.
+                      </div>
+                       </div>
+                    </div>
+
+                  
+                  </div>
+
+                  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="file" accept="image/png, image/jpeg" id="form3Example10c" required="" name="picture" class="form-control" formControlName="profilePicture" />
+                       
+                        <!-- <input type="text" id="form3Example10c" required="" name="picture" class="form-control" formControlName="profilePicture" /> -->
+
+                        <label class="form-label" for="form3Example10c">Upload profile picture</label>
+
+                      </div>
+                      <div  *ngIf=" signUpForm.controls.profilePicture.invalid && (signUpForm.controls.profilePicture.dirty || signUpForm.controls.profilePicture.touched)" class="alert">
+                        <div *ngIf="signUpForm.controls.profilePicture.errors?.['required']" >
+                          Uppload profile picture.
+                      </div>
+                       </div>
+                    </div>
+                    
+                    <!-- <div class="imageDiv">
+                      <img src="{{signUpForm.controls.profilePicture.value}}" alt="profile picture">
+                    </div> -->
+
+
+                <div class="d-flex flex-column align-items-center mb-4"  formArrayName="interests" >                    
+                    <input type="button" class= " btn btn-success btn-lg" (click)="addInterest()" value="+" >
+                    <div class="d-flex flex-row align-items-center mb-4" *ngFor="let interest of interests.controls; index as i">
+                     
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" >Interests</label>
+                       <input type="text"  class="form-control"  [formControlName]="i">
+
+                      </div>
+
+                      </div>     
+                   
+                    </div>
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <input type="submit" class="btn btn-primary btn-lg" [disabled]="!signUpForm.valid" >
+                    </div>
+  
+                  </form>
+  
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- template driven ფორმა -->
+<!-- <section class="vh-50 " (ngSubmit)="formSubmitted()"  >
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold  mx-1 mx-md-4 mt-4">Sign up</p>
+  
+                  <form class="mx-1 mx-md-4" (ngSubmit)="formSubmitted()"  #contactForm="ngForm">
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" required="" name="firstname" class="form-control" [(ngModel)]="formData.firstname" >
+                        <label class="form-label" for="form3Example1c">Your Name</label>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example3c" required=""  name="email" class="form-control" [(ngModel)]="formData.email" />
+                        <label class="form-label" for="form3Example3c">Your Email</label>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="form3Example4c" required="" name="password" class="form-control" [(ngModel)]="formData.password" />
+                        <label class="form-label" for="form3Example4c">Password</label>
+                      </div>
+                    </div>
+  
+                   
+  
+                    
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <input type="submit" class="btn btn-primary btn-lg" [disabled]="contactForm.invalid" Register>
+                    </div>
+  
+                  </form>
+  
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+

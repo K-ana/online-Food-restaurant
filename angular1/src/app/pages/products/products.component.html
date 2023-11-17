@@ -1,0 +1,25 @@
+
+<div class="page">
+
+<div class="container mx-auto mt-4 product">
+    <div class="row" >     
+            <div class="col-md-4" *ngFor="let product of products" >
+  <div class="card " style="width: 18rem;">
+    <img [src]="product.thumbnail" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+          <h6 class="card-text">${{product.price}}</h6>
+          <h6 class="card-text">${{product.category}}</h6>
+      <p class="card-text">{{product.description}}</p>
+      <a  class="btn mr-2" [routerLink]=" 'details/' + product.id"><i class="fas fa-link"></i>See Details</a>
+     
+    </div>
+    </div>
+    </div>
+  </div>
+    </div>
+
+
+
+</div>
+
